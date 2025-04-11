@@ -5,10 +5,10 @@
     "languageInChineseSimple": "英语"
   },
   "IndexPageText": {
-    "title": "英文Title",
-    "description": "英文description",
-    "h1Text": "英文首页 H1",
-    "descriptionBelowH1Text": "英文首页 H1下方的文字"
+    "title": "AI Tattoo Generator | Personalized Tattoo Designs - AITattoo.pro",
+    "description": "AITattoo.pro is an AI-powered tattoo design platform. Choose gender, body placement, upload a reference image or describe your idea — and let AI create the perfect custom tattoo for you.",
+    "h1Text": "Design Your Custom Tattoo with AI",
+    "descriptionBelowH1Text": "Select gender and placement, upload a photo or describe your idea — our AI will generate a unique tattoo design just for you."
   },
   "CommonText": {
     "loadingText": "Loading...",

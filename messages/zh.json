@@ -5,10 +5,10 @@
     "languageInChineseSimple": "简体中文"
   },
   "IndexPageText": {
-    "title": "中文Title",
-    "description": "中文description",
-    "h1Text": "首页 H1",
-    "descriptionBelowH1Text": "首页 H1下方的文字"
+    "title": "AI 纹身设计生成器 | 个性化纹身创意 - AITattoo.pro",
+    "description": "AITattoo.pro 是一个 AI 驱动的纹身创意平台，支持男女分类、身体部位选择，上传图像或输入想法，即可一键生成专属纹身设计。立即体验个性化纹身灵感。",
+    "h1Text": "用 AI 设计你的专属纹身",
+    "descriptionBelowH1Text": "选择性别、纹身部位，上传图片或输入想法，AI 将为你生成独一无二的纹身图案。"
   },
   "CommonText": {
     "loadingText": "加载中...",
