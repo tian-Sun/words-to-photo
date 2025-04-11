@@ -12,6 +12,9 @@ const nextConfig = {
             {source: '/:locale/stickers/1', destination: '/:locale/stickers', permanent: true},
             {source: '/:locale/stickers/0', destination: '/:locale/stickers', permanent: true},
         ];
+    },
+    experimental: {
+        runtime: 'edge'
     }
 };
 
