@@ -53,7 +53,7 @@ export default function Footer({
             >
               <img
                 className="h-10"
-                src="/website.svg"
+                src="/website.png"
                 alt={process.env.NEXT_PUBLIC_DOMAIN_NAME}
               />
             </Link>
