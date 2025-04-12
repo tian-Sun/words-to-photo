@@ -3,7 +3,7 @@ export interface Article {
   uid: string;
   title: string;
   excerpt: string;
-  content: string;
+  content?: string;
   featured_image: {
     url: string;
     alt: string;

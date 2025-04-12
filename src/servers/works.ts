@@ -138,24 +138,29 @@ export const getPublicResultList = async (locale, current_page) => {
 }
 
 export const getLatestPublicResultList = async (locale, current_page) => {
-  // 首页数据
-  const pageSize = 8;
-  const skipSize = pageSize * (Number(current_page) - 1);
+  try {
+    // 首页数据
+    const pageSize = 8;
+    const skipSize = pageSize * (Number(current_page) - 1);
 
-  const results = await db.query('select * from works where is_public=$1 and current_language=$2 and output_url != $3 and is_delete=$4 order by updated_at desc limit $5 offset $6', [true, locale, '', false, pageSize, skipSize]);
-  const works = results.rows;
+    const results = await db.query('select * from works where is_public=$1 and current_language=$2 and output_url != $3 and is_delete=$4 order by updated_at desc limit $5 offset $6', [true, locale, '', false, pageSize, skipSize]);
+    const works = results.rows;
 
-  const resultInfoList = [];
-  if (works.length > 0) {
-    for (let i = 0; i < works.length; i++) {
-      const currentRow = works[i];
-      currentRow.output_url = getArrayUrlResult(currentRow.output_url);
-      resultInfoList.push(currentRow)
+    const resultInfoList = [];
+    if (works.length > 0) {
+      for (let i = 0; i < works.length; i++) {
+        const currentRow = works[i];
+        currentRow.output_url = getArrayUrlResult(currentRow.output_url);
+        resultInfoList.push(currentRow)
+      }
+      return resultInfoList;
     }
-    return resultInfoList;
-  }
 
-  return [];
+    return [];
+  } catch (error) {
+    console.error('Error in getLatestPublicResultList:', error);
+    return [];
+  }
 }
 
 export const getPagination = async (locale:string, page: number) => {

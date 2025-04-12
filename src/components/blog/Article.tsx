@@ -14,13 +14,14 @@ export const Article = ({ article, locale }: ArticleProps) => {
     <article className="group grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16 items-center">
       <Link 
         href={`/${locale}/blog/${article.uid}`}
-        className="block overflow-hidden rounded-lg bg-slate-50 aspect-[4/3] relative"
+        className="relative block aspect-[16/9] w-full overflow-hidden rounded-2xl bg-gray-100"
       >
         <Image
-          src={article.featured_image}
-          alt={article.title}
+          src={article.featured_image.url}
+          alt={article.featured_image.alt}
           fill
-          className="object-cover transition duration-300 group-hover:scale-105"
+          className="object-cover"
+          sizes="(min-width: 1024px) 384px, (min-width: 640px) 288px, 256px"
         />
       </Link>
       <div>

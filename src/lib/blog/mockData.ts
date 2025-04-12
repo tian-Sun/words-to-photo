@@ -1,54 +1,40 @@
-import { ArticleType, ArticleDetailType } from "~/components/blog/Article";
+import { Article } from "~/types/blog";
 
 // 模拟文章列表数据
-export const articles: ArticleType[] = [
+export const articles: Article[] = [
   {
     id: '1',
     uid: 'getting-started',
     title: '开始使用 Words to Photo',
     publication_date: '2024-03-20',
-    featured_image: {
-      url: '/images/blog/getting-started.jpg',
-      alt: '开始使用'
-    },
-    excerpt: '欢迎使用 Words to Photo！本指南将帮助您开始使用我们的平台，了解基本功能和如何创建您的第一个作品。'
+    featured_image: '/images/blog/getting-started.jpg',
+    excerpt: '欢迎使用 Words to Photo！本指南将帮助您开始使用我们的平台，了解基本功能和如何创建您的第一个作品。',
+    author: 'Words to Photo Team'
   },
   {
     id: '2',
     uid: 'advanced-features',
     title: '高级功能指南',
     publication_date: '2024-03-21',
-    featured_image: {
-      url: '/images/blog/advanced-features.jpg',
-      alt: '高级功能'
-    },
-    excerpt: '探索 Words to Photo 的高级功能，这些功能可以提升您的创作体验，让您的作品更加独特和精美。'
+    featured_image: '/images/blog/advanced-features.jpg',
+    excerpt: '探索 Words to Photo 的高级功能，这些功能可以提升您的创作体验，让您的作品更加独特和精美。',
+    author: 'Words to Photo Team'
   },
   {
     id: '3',
     uid: 'tips-and-tricks',
     title: '获得更好结果的技巧和窍门',
     publication_date: '2024-03-22',
-    featured_image: {
-      url: '/images/blog/tips-and-tricks.jpg',
-      alt: '技巧和窍门'
-    },
-    excerpt: '学习一些技巧和窍门，帮助您从 Words to Photo 获得最佳结果，创建令人惊叹的图像。'
+    featured_image: '/images/blog/tips-and-tricks.jpg',
+    excerpt: '学习一些技巧和窍门，帮助您从 Words to Photo 获得最佳结果，创建令人惊叹的图像。',
+    author: 'Words to Photo Team'
   }
 ];
 
 // 模拟文章详情数据
-export const articleDetails: ArticleDetailType[] = [
+export const articleDetails: Article[] = [
   {
-    id: '1',
-    uid: 'getting-started',
-    title: '开始使用 Words to Photo',
-    publication_date: '2024-03-20',
-    featured_image: {
-      url: '/images/blog/getting-started.jpg',
-      alt: '开始使用'
-    },
-    excerpt: '欢迎使用 Words to Photo！本指南将帮助您开始使用我们的平台，了解基本功能和如何创建您的第一个作品。',
+    ...articles[0],
     content: `
       <h2>欢迎使用 Words to Photo</h2>
       <p>Words to Photo 是一个强大的 AI 驱动的图像生成平台，可以将您的文字描述转化为精美的图像。无论您是设计师、艺术家还是创意工作者，我们的平台都能帮助您快速创建独特的视觉内容。</p>
@@ -80,15 +66,7 @@ export const articleDetails: ArticleDetailType[] = [
     `
   },
   {
-    id: '2',
-    uid: 'advanced-features',
-    title: '高级功能指南',
-    publication_date: '2024-03-21',
-    featured_image: {
-      url: '/images/blog/advanced-features.jpg',
-      alt: '高级功能'
-    },
-    excerpt: '探索 Words to Photo 的高级功能，这些功能可以提升您的创作体验，让您的作品更加独特和精美。',
+    ...articles[1],
     content: `
       <h2>Words to Photo 的高级功能</h2>
       <p>一旦您熟悉了 Words to Photo 的基本功能，您就可以开始探索我们平台提供的高级功能，这些功能可以帮助您创建更加独特和精美的图像。</p>
@@ -128,15 +106,7 @@ export const articleDetails: ArticleDetailType[] = [
     `
   },
   {
-    id: '3',
-    uid: 'tips-and-tricks',
-    title: '获得更好结果的技巧和窍门',
-    publication_date: '2024-03-22',
-    featured_image: {
-      url: '/images/blog/tips-and-tricks.jpg',
-      alt: '技巧和窍门'
-    },
-    excerpt: '学习一些技巧和窍门，帮助您从 Words to Photo 获得最佳结果，创建令人惊叹的图像。',
+    ...articles[2],
     content: `
       <h2>Words to Photo 的技巧和窍门</h2>
       <p>无论您是 Words to Photo 的新手还是经验丰富的用户，这些技巧和窍门都可以帮助您获得更好的结果，创建更加令人惊叹的图像。</p>

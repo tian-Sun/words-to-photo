@@ -13,7 +13,7 @@ interface LayoutProps {
 
 export const Layout = ({ children, locale, page, title, description }: LayoutProps) => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#8B5CF6] to-[#6366F1]">
       <HeadInfo
         locale={locale}
         page={page}
@@ -21,9 +21,9 @@ export const Layout = ({ children, locale, page, title, description }: LayoutPro
         description={description}
       />
       <Header locale={locale} />
-      <main className="py-16">
+      <div className="bg-white">
         {children}
-      </main>
+      </div>
       <Footer
         locale={locale}
         page={page}
