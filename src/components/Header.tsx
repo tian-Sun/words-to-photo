@@ -68,10 +68,10 @@ export default function Header({
             className="-m-1.5 ml-0.5 p-1.5"
             onClick={() => checkLocalAndLoading(locale)}>
             <img
-              className="h-8 w-auto"
-              src="/website.svg"
-              width={32}
-              height={24}
+              className="h-12 w-auto"
+              src="/website.png"
+              width={92}
+              height={44}
               alt={process.env.NEXT_PUBLIC_DOMAIN_NAME}
             />
           </Link>
