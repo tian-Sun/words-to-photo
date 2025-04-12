@@ -215,6 +215,7 @@ export const getMenuText = async () => {
     header1: tMenu('header1'),
     header2: tMenu('header2'),
     header3: tMenu('header3'),
+    header4: tMenu('header4'),
     footerLegal: tMenu('footerLegal'),
     footerLegal0: tMenu('footerLegal0'),
     footerLegal1: tMenu('footerLegal1'),

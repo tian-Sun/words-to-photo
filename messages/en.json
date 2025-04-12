@@ -35,12 +35,22 @@
     "header1": "My Stickers",
     "header2": "Discover Stickers",
     "header3": "Search Stickers",
+    "header4": "Blog",
     "footerLegal": "Legal",
     "footerLegal0": "Privacy Policy",
     "footerLegal1": "Terms & Conditions",
     "footerSupport": "Support",
     "footerSupport0": "Pricing",
     "footerSupport1": "Manage Subscribe"
+  },
+  "Blog": {
+    "title": "Blog | Words to Photo",
+    "description": "Explore our blog articles about Words to Photo, learn about new features, tips and best practices.",
+    "h1Text": "Blog",
+    "descriptionBelowH1Text": "Explore our blog articles about Words to Photo, learn about new features, tips and best practices.",
+    "notFound": "Article Not Found",
+    "readMore": "Read More",
+    "latestArticles": "Latest Articles"
   },
   "AuthText": {
     "loginText": "Log in",

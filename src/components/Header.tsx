@@ -105,6 +105,12 @@ export default function Header({
             className="text-sm font-semibold leading-6 text-white hover:text-blue-500">
             {menuText.header3}
           </Link>
+          <Link
+            href={getLinkHref(locale, 'blog')}
+            onClick={() => checkPageAndLoading('blog')}
+            className="text-sm font-semibold leading-6 text-white hover:text-blue-500">
+            {menuText.header4}
+          </Link>
           {
             userData.email ?
               <Link
@@ -215,6 +221,12 @@ export default function Header({
                   onClick={() => checkPageAndLoading('search')}
                   className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white">
                   {menuText.header3}
+                </Link>
+                <Link
+                  href={getLinkHref(locale, 'blog')}
+                  onClick={() => checkPageAndLoading('blog')}
+                  className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white">
+                  {menuText.header4}
                 </Link>
                 {
                   userData.email ?

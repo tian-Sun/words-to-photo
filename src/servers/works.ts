@@ -3,6 +3,12 @@ import {getArrayUrlResult} from "~/configs/buildLink";
 
 const db = getDb();
 
+// 获取分页大小，默认为12
+const getPageSize = () => {
+  const pageSize = Number(process.env.NEXT_PUBLIC_PAGES_SIZE);
+  return isNaN(pageSize) ? 12 : pageSize;
+};
+
 export const getWorkDetailByUid = async (locale:string, uid:string) => {
   // 先查指定语言的是否有，没有则返回原始数据
   const resultsCurrent = await db.query('select * from works where uid=$1 and current_language=$2 and is_delete=$3 order by updated_at desc', [uid, locale, false]);
@@ -108,8 +114,12 @@ export const getWorkListByUserId = async (user_id: string, current_page:string) 
 }
 
 export const getPublicResultList = async (locale, current_page) => {
-  const pageSize = Number(process.env.NEXT_PUBLIC_PAGES_SIZE);
-  const skipSize = pageSize * (Number(current_page) - 1);
+  const pageSize = getPageSize();
+  const page = Number(current_page);
+  if (isNaN(page) || page < 1) {
+    return [];
+  }
+  const skipSize = pageSize * (page - 1);
 
   const results = await db.query('select * from works where is_public=$1 and current_language=$2 and output_url != $3 and is_delete=$4 order by updated_at desc limit $5 offset $6', [true, locale, '', false, pageSize, skipSize]);
   const works = results.rows;
@@ -149,13 +159,18 @@ export const getLatestPublicResultList = async (locale, current_page) => {
 }
 
 export const getPagination = async (locale:string, page: number) => {
-
-  const pageSize = Number(process.env.NEXT_PUBLIC_PAGES_SIZE);
+  const pageSize = getPageSize();
   const results = await db.query('select count(1) from works where is_public=$1 and current_language=$2 and is_delete=$3', [true, locale, false]);
   const countTotal = results.rows;
 
-  const total = countTotal[0].count;
-  const totalPage = Math.ceil(total / pageSize)
+  const total = Number(countTotal[0].count);
+  if (isNaN(total)) {
+    return {
+      totalPage: 0,
+      pagination: []
+    };
+  }
+  const totalPage = Math.ceil(total / pageSize);
 
   const result = {
     totalPage: totalPage,

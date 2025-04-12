@@ -1,6 +1,8 @@
 import {Pathnames} from 'next-intl/navigation';
 
 export const locales = ['en', 'zh'] as const;
+export const defaultLocale = 'en' as const;
+export const localePrefix = 'always';
 
 export const languages = [
   {
@@ -17,13 +19,20 @@ export const languages = [
 
 export const pathnames = {
   '/': '/',
-} satisfies Pathnames<typeof locales>;
+  '/about': '/about',
+  '/blog': '/blog',
+  '/blog/[uid]': '/blog/[uid]',
+  '/contact': '/contact',
+  '/faq': '/faq',
+  '/privacy': '/privacy',
+  '/terms': '/terms',
+  '/tattoo': '/tattoo',
+  '/tattoo/[uid]': '/tattoo/[uid]',
+  '/stickers': '/stickers',
+  '/stickers/[uid]': '/stickers/[uid]'
+} as const;
 
-// Use the default: `always`，设置为 as-needed可不显示默认路由
-export const localePrefix = 'as-needed';
-
-export type AppPathnames = keyof typeof pathnames;
-
+export type Pathnames = keyof typeof pathnames;
 
 export const getLanguageByLang = (lang) => {
   for (let i = 0; i < languages.length; i++) {
