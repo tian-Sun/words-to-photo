@@ -30,7 +30,7 @@ export const Article = ({ article, locale }: ArticleProps) => {
             {formatDate(article.publication_date)}
           </time>
           <span>•</span>
-          <span>{article.author}</span>
+          <span>{article.author.name}</span>
         </div>
         <h2 className="text-3xl font-bold mb-4">
           <Link 

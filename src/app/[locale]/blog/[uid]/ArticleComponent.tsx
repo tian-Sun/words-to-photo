@@ -45,8 +45,8 @@ export default function ArticleComponent({ article, locale, blogText }: ArticleC
         <header className="relative">
           <div className="h-[70vh] relative">
             <Image
-              src={article.featured_image}
-              alt={article.title}
+              src={article.featured_image.url}
+              alt={article.featured_image.alt}
               fill
               className="object-cover"
               priority
@@ -61,7 +61,7 @@ export default function ArticleComponent({ article, locale, blogText }: ArticleC
                     {formatDate(article.publication_date)}
                   </time>
                   <span>•</span>
-                  <span>{article.author}</span>
+                  <span>{article.author.name}</span>
                 </div>
                 <h1 className="text-5xl font-bold text-white mb-6">
                   {article.title}
@@ -128,8 +128,8 @@ export default function ArticleComponent({ article, locale, blogText }: ArticleC
                       className="block aspect-[4/3] relative mb-6 overflow-hidden rounded-lg bg-slate-100"
                     >
                       <Image
-                        src={otherArticle.featured_image}
-                        alt={otherArticle.title}
+                        src={otherArticle.featured_image.url}
+                        alt={otherArticle.featured_image.alt}
                         fill
                         className="object-cover transition duration-300 group-hover:scale-105"
                       />
@@ -139,7 +139,7 @@ export default function ArticleComponent({ article, locale, blogText }: ArticleC
                         {formatDate(otherArticle.publication_date)}
                       </time>
                       <span>•</span>
-                      <span>{otherArticle.author}</span>
+                      <span>{otherArticle.author.name}</span>
                     </div>
                     <h3 className="text-xl font-bold mb-3">
                       <Link

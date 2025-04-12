@@ -72,14 +72,14 @@ export default function Footer({
               <div className="mt-10 md:mt-0">
                 <div className="text-sm font-semibold leading-6 text-white"></div>
                 <ul role="list" className="mt-6 space-y-4">
-                  <a
+                  {/* <a
                     className="text-sm leading-6 footer-link text-white"
                     target={"_blank"}
                     href={"https://sticker.show/"}
                     title={"Free Online AI Sticker Maker & Generator!"}
                   >
                     Source by Sticker.Show
-                  </a>
+                  </a> */}
                 </ul>
               </div>
             </div>
