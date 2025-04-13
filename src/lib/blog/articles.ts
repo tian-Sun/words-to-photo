@@ -3,7 +3,7 @@ import { Article } from '~/types/blog';
 // 模拟文章数据
 const articles: Article[] = [
   {
-    id: 1,
+    id: '1',
     uid: 'getting-started-with-words-to-photo',
     title: 'Getting Started with Words to Photo',
     excerpt: 'Learn how to use Words to Photo to transform your text into beautiful images.',
