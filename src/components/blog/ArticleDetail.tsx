@@ -1,28 +1,33 @@
 import Image from "next/image";
 import { formatDate } from "~/lib/utils";
 import { Heading } from "./Heading";
-import { ArticleType } from "./Article";
+import { Article as ArticleType } from "~/types/blog";
 
 export type ArticleDetailType = ArticleType & {
   content: string;
 };
 
+// interface ArticleDetailProps {
+//   article: {
+//     id: string;
+//     title: string;
+//     excerpt: string;
+//     content: string;
+//     featured_image: {
+//       url: string;
+//       alt: string;
+//     };
+//     publication_date: string;
+//     author: {
+//       name: string;
+//       avatar: string;
+//     };
+//   };
+//   locale: string;
+// }
+
 interface ArticleDetailProps {
-  article: {
-    id: string;
-    title: string;
-    excerpt: string;
-    content: string;
-    featured_image: {
-      url: string;
-      alt: string;
-    };
-    publication_date: string;
-    author: {
-      name: string;
-      avatar: string;
-    };
-  };
+  article: ArticleDetailType;
   locale: string;
 }
 
